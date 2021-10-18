@@ -1,0 +1,131 @@
+# 	$ OpenBSD: sshd_config, v 1.103 2018/04/09 20:41:22 tj Exp $
+
+# Este é o arquivo de configuração de todo o sistema do servidor sshd. Ver
+# sshd_config (5) para mais informações.
+
+# Este sshd foi compilado com PATH = / usr / bin: / bin: / usr / sbin: / sbin
+
+# A estratégia usada para opções no sshd_config padrão fornecido com
+# OpenSSH é especificar opções com seus valores padrão onde
+# possível, mas deixe-os comentados. As opções não comentadas substituem o
+# valor padrão.
+
+Incluir  /etc/ssh/sshd_config.d/*.conf
+
+Porta  22
+
+# AddressFamily any
+
+ListenAddress  0.0.0.0
+ListenAddress  ::
+
+# HostKey / etc / ssh / ssh_host_rsa_key
+# HostKey / etc / ssh / ssh_host_ecdsa_key
+# HostKey / etc / ssh / ssh_host_ed25519_key
+
+# Cifras e codificação
+# RekeyLimit padrão nenhum
+
+# Logging
+# SyslogFacility AUTH
+# LogLevel INFO
+
+# Autenticação:
+
+# LoginGraceTime 2m
+# PermitRootLogin forbit-password
+# StrictModes sim
+# MaxAuthTries 6
+# MaxSessions 10
+
+# PubkeyAuthentication yes
+
+# Espere que .ssh / authorized_keys2 seja desconsiderado por padrão no futuro.
+# AuthorizedKeysFile .ssh / authorized_keys .ssh / authorized_keys2
+
+# AuthorizedPrincipalsFile nenhum
+
+# AuthorizedKeysCommand nenhum
+# AuthorizedKeysCommandUser nobody
+
+# Para que isso funcione, você também precisará de chaves de host em / etc / ssh / ssh_known_hosts
+# HostbasedAuthentication no
+# Mude para sim se você não confiar em ~ / .ssh / known_hosts para
+# HostbasedAuthentication
+# IgnoreUserKnownHosts no
+# Não leia os arquivos ~ / .rhosts e ~ / .shosts do usuário
+# IgnoreRhosts yes
+
+# Para desabilitar senhas de texto não criptografado em túnel, mude para não aqui!
+# PasswordAuthentication yes
+#   PermitEmptyPasswords no
+
+# Mude para sim para habilitar as senhas de resposta de desafio (cuidado com os problemas com
+# alguns módulos PAM e threads)
+
+ChallengeResponseAuthentication  não
+
+# Opções Kerberos
+# KerberosAuthentication no
+# KerberosOrLocalPasswd yes
+# KerberosTicketCleanup yes
+# KerberosGetAFSToken no
+
+# Opções GSSAPI
+# GSSAPIAuthentication no
+# GSSAPICleanupCredentials yes
+# GSSAPIStrictAcceptorCheck yes
+# GSSAPIKeyExchange no
+
+# Defina como 'sim' para habilitar a autenticação PAM, processamento de conta,
+# e processamento da sessão. Se estiver habilitado, a autenticação PAM irá
+# seja permitido por meio de ChallengeResponseAuthentication e
+# PasswordAuthentication. Dependendo da configuração do seu PAM,
+# A autenticação PAM via ChallengeResponseAuthentication pode ser ignorada
+# a configuração de "PermitRootLogin sem senha".
+# Se você apenas deseja que a conta PAM e as verificações de sessão sejam executadas sem
+# Autenticação PAM, em seguida, habilite-a, mas defina PasswordAuthentication
+# e ChallengeResponseAuthentication como 'não'.
+
+UsePAM  sim
+
+# AllowAgentForwarding yes
+# AllowTcpForwarding yes
+# GatewayPorts no
+
+X11Forwarding  sim
+
+# X11DisplayOffset 10
+# X11UseLocalhost yes
+# PermitTTY sim
+
+PrintMotd  não
+
+# PrintLastLog yes
+# TCPKeepAlive sim
+# PermitUserEnvironment no
+# Compressão atrasada
+# ClientAliveInterval 0
+# ClientAliveCountMax 3
+# UseDNS no
+# PidFile /var/run/sshd.pid
+# MaxStartups 10: 30: 100
+# PermitTunnel no
+# ChrootDirectory nenhum
+# VersionAddendum none
+
+# nenhum caminho de banner padrão
+# Banner nenhum
+
+# Permitir que o cliente passe variáveis ​​de ambiente local
+AcceptEnv  LANG  LC_ *
+
+# anula o padrão de nenhum subsistema
+Subsistema 	sftp 	/ usr / lib / openssh / sftp-server
+
+# Exemplo de configuração de substituição por usuário
+# Match User anoncvs
+# 	X11Forwarding no
+# 	AllowTcpForwarding no
+# 	PermitTTY não
+# 	ForceCommand cvs server
