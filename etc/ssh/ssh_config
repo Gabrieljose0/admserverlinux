@@ -1,0 +1,60 @@
+
+# Este é o arquivo de configuração de todo o sistema do cliente ssh. Ver
+# ssh_config (5) para mais informações. Este arquivo fornece padrões para
+# usuários, e os valores podem ser alterados nos arquivos de configuração por usuário
+# ou na linha de comando.
+
+# Os dados de configuração são analisados ​​da seguinte forma:
+#   1. opções de linha de comando
+#   2. arquivo específico do usuário
+#   3. arquivo de todo o sistema
+# Qualquer valor de configuração só é alterado na primeira vez que é definido.
+# Assim, as definições específicas do host devem estar no início do
+# arquivo de configuração e padrões no final.
+
+# Padrões para todo o site para algumas opções comumente usadas. Para um abrangente
+# lista de opções disponíveis, seus significados e padrões, consulte o
+Página do manual # ssh_config (5).
+
+Incluir  /etc/ssh/ssh_config.d/*.conf
+
+Host  *
+#    ForwardAgent no
+#    ForwardX11 não
+#    ForwardX11Trusted sim
+
+PasswordAuthentication  sim
+HostbasedAuthentication  não
+
+#    GSSAPIAuthentication no
+#    GSSAPIDelegateCredentials no
+#    GSSAPIKeyExchange no
+#    GSSAPITrustDNS no
+#    BatchMode não
+#    CheckHostIP sim
+
+Endereço da família  qualquer
+
+#    ConnectTimeout 0
+#    StrictHostKeyChecking ask
+#    IdentityFile ~ / .ssh / id_rsa
+#    IdentityFile ~ / .ssh / id_dsa
+#    IdentityFile ~ / .ssh / id_ecdsa
+#    IdentityFile ~ / .ssh / id_ed25519
+
+Porta  22
+
+#    Ciphers aes128-ctr, aes192-ctr, aes256-ctr, aes128-cbc, 3des-cbc
+#    MACs hmac-md5, hmac-sha1, umac-64 @ openssh.com
+#    EscapeChar ~
+#    Tunnel no
+#    TunnelDevice any: any
+#    PermitLocalCommand no
+#    VisualHostKey no
+#    ProxyCommand ssh -q -W% h:% p gateway.example.com
+#    RekeyLimit 1G 1h
+#    UserKnownHostsFile ~ / .ssh / known_hosts.d /% k
+
+SendEnv  LANG  LC_ *
+HashKnownHosts  sim
+Autenticação GSSAPIA  sim
