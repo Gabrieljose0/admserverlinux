@@ -1,8 +1,8 @@
 zone "l1m9.lan" {
         type master;
-        file "/etc/bind/db.l1m12-1.lan";
+        file "/etc/bind/db.l1m9.lan";
 };
-zone "155.15.168.192.in-addr.arpa" {
+zone "77.15.168.192.in-addr.arpa" {
         type master;
-        file "/etc/bind/db.155.15.168.192";
+        file "/etc/bind/db.77.15.168.192";
 };
