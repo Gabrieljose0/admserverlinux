@@ -1,4 +1,4 @@
-zone "l1m12-1.lan" {
+zone "l1m9.lan" {
         type master;
         file "/etc/bind/db.l1m12-1.lan";
 };
