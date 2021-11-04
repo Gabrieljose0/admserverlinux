@@ -18,7 +18,7 @@ options {
 	dnssec-validation auto;
 	auth-nxdomain no;
 	// onde esta 192.168.15.155 é o ip do pc
-	listen-on { 127.0.0.1; 192.168.15.155; };
+	listen-on { 127.0.0.1; 192.168.15.77; };
 	listen-on-v6 { ::1; };
 	allow-query { "interna"; };
 	allow-recursion { "interna"; };
