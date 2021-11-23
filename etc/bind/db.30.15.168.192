@@ -2,7 +2,7 @@
 ; BIND reverse data file for local 192.168.1.XXX net
 ;
 $TTL    604800
-@       IN      SOA     ns.l1m12.lan. root.l1m9.lan. (
+@       IN      SOA     ns.l1m19.lan. root.l1m9.lan. (
                               1         ; Serial
                              8H         ; Refresh
                              2H         ; Retry
