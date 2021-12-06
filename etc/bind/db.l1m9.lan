@@ -10,5 +10,5 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      l1m9.lan.
-@       IN      A       192.168.15.77
+@       IN      A       172.16.0.77
 @       IN      AAAA    ::1
