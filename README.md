@@ -62,7 +62,7 @@ link do exemplo do site oficial do servidor debian: https://servidordebian.org/p
     # Static IP address
     auto enp0s3
     iface enp0s3 inet static
-        address 172.16.0.88/16
+        address 172.16.0.77/16
         gateway 172.16.0.1
 
 para conferir se configurou corretamente tente o comando no terminal root# : systemctl restart networking 
