@@ -2,7 +2,7 @@
 
 Repositório com Configuração de servidor linux
 
-1ª etapa
+1ª ETAPA
 
 • Baixar e Instalar Virtual box
 
@@ -24,7 +24,7 @@ iniciar  VM  e instalar o Debian DVD1 iso
 
 • ligar a VM
 
-2ª etapa: edite o arquivo /etc/apt/sources.list
+2ª ETAPA: edite o arquivo /etc/apt/sources.list
 
 para editar abra o terminal como root#:
 
@@ -49,7 +49,7 @@ abra o terminal como root e digite o comando
 root#: apt update -y && apt upgrade -y
 
 
-3ª etapa:
+3ª ETAPA:
 
 • logar na conta
 
@@ -77,7 +77,7 @@ se não aparecer nenhum erro está ok. Obs: em alguns casos é preciso reiniciar
 • verifique se sua interface de rede foi aceita e se está funcionando.
 
 
-4ª etapa:
+4ª ETAPA:
 
 • agora para a configuração ficar mais fácil dependendo da configuração do servidor é recomendado ser instalado primeiro o servidor ssh para poder acessar remotamente en outra máquina com configurações melhores para se trabalhar vendo a documentação.
 
@@ -94,7 +94,7 @@ se não aparecer nenhum erro está ok. Obs: em alguns casos é preciso reiniciar
 OBS: a partir de agora podemos configurar o servidor de um outro servidor remoto, outro computador dentro da rede ou o mesmo computador pelo putty do windows.
 
 
-5ª etapa: Fazer servidor funcionar como cache de DNS serguir a etapa 1,2,3.
+5ª ETAPA: Fazer servidor funcionar como cache de DNS serguir a etapa 1,2,3.
 
 ex: cache DNS toda a configuração passo a passo: Ex1 site: https://servidordebian.org/pt/buster/intranet/dns/cache
 
@@ -128,7 +128,7 @@ ex: cache DNS toda a configuração passo a passo: Ex1 site: https://servidordeb
     root#: nslookup www.debian.org
     
     
-    6ª Etapa: para fazer o DNS local da etapa 1 a 4 deve ter sido concluída.
+    6ª ETAPA: para fazer o DNS local da etapa 1 a 4 deve ter sido concluída.
     
       Ex o site Oficial de todos os carquivo com passo a passo: https://servidordebian.org/pt/buster/intranet/dns/server
     
