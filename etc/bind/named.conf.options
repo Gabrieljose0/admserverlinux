@@ -2,7 +2,7 @@ acl "interna" {
 	
 	127.0.0.0/8;
 	::1/128;
-	192.168.15.0/24;
+	172.16.0.0/16;
 
 }; 
 options { 
@@ -17,8 +17,8 @@ options {
 
 	dnssec-validation auto;
 	auth-nxdomain no;
-	// onde esta 192.168.15.155 é o ip do pc
-	listen-on { 127.0.0.1; 192.168.15.77; };
+	// onde esta 172.16.0.77 é o ip do servidor
+	listen-on { 127.0.0.1; 172.16.0.77; };
 	listen-on-v6 { ::1; };
 	allow-query { "interna"; };
 	allow-recursion { "interna"; };
