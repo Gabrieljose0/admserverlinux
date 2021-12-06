@@ -1,131 +1,131 @@
-# 	$ OpenBSD: sshd_config, v 1.103 2018/04/09 20:41:22 tj Exp $
+#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
 
-# Este é o arquivo de configuração de todo o sistema do servidor sshd. Ver
-# sshd_config (5) para mais informações.
+# This is the sshd server system-wide configuration file.  See
+# sshd_config(5) for more information.
 
-# Este sshd foi compilado com PATH = / usr / bin: / bin: / usr / sbin: / sbin
+# This sshd was compiled with PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
-# A estratégia usada para opções no sshd_config padrão fornecido com
-# OpenSSH é especificar opções com seus valores padrão onde
-# possível, mas deixe-os comentados. As opções não comentadas substituem o
-# valor padrão.
+# The strategy used for options in the default sshd_config shipped with
+# OpenSSH is to specify options with their default value where
+# possible, but leave them commented.  Uncommented options override the
+# default value.
 
-Incluir  /etc/ssh/sshd_config.d/*.conf
+Include /etc/ssh/sshd_config.d/*.conf
 
-Porta  22
+Port 22
 
-# AddressFamily any
+#AddressFamily any
 
-ListenAddress  0.0.0.0
-ListenAddress  ::
+ListenAddress 172.16.0.88
+ListenAddress ::
 
-# HostKey / etc / ssh / ssh_host_rsa_key
-# HostKey / etc / ssh / ssh_host_ecdsa_key
-# HostKey / etc / ssh / ssh_host_ed25519_key
+# HostKey /etc/ssh/ssh_host_rsa_key
+# HostKey /etc/ssh/ssh_host_ecdsa_key
+# HostKey /etc/ssh/ssh_host_ed25519_key
 
-# Cifras e codificação
-# RekeyLimit padrão nenhum
+# Ciphers and keying
+# RekeyLimit default none
 
 # Logging
 # SyslogFacility AUTH
 # LogLevel INFO
 
-# Autenticação:
+# Authentication:
 
 # LoginGraceTime 2m
-# PermitRootLogin forbit-password
-# StrictModes sim
+# PermitRootLogin prohibit-password
+# StrictModes yes
 # MaxAuthTries 6
 # MaxSessions 10
 
 # PubkeyAuthentication yes
 
-# Espere que .ssh / authorized_keys2 seja desconsiderado por padrão no futuro.
-# AuthorizedKeysFile .ssh / authorized_keys .ssh / authorized_keys2
+# Expect .ssh/authorized_keys2 to be disregarded by default in future.
+# AuthorizedKeysFile	.ssh/authorized_keys .ssh/authorized_keys2
 
-# AuthorizedPrincipalsFile nenhum
+# AuthorizedPrincipalsFile none
 
-# AuthorizedKeysCommand nenhum
+# AuthorizedKeysCommand none
 # AuthorizedKeysCommandUser nobody
 
-# Para que isso funcione, você também precisará de chaves de host em / etc / ssh / ssh_known_hosts
+# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
 # HostbasedAuthentication no
-# Mude para sim se você não confiar em ~ / .ssh / known_hosts para
+# Change to yes if you don't trust ~/.ssh/known_hosts for
 # HostbasedAuthentication
 # IgnoreUserKnownHosts no
-# Não leia os arquivos ~ / .rhosts e ~ / .shosts do usuário
+# Don't read the user's ~/.rhosts and ~/.shosts files
 # IgnoreRhosts yes
 
-# Para desabilitar senhas de texto não criptografado em túnel, mude para não aqui!
+# To disable tunneled clear text passwords, change to no here!
 # PasswordAuthentication yes
-#   PermitEmptyPasswords no
+#  PermitEmptyPasswords no
 
-# Mude para sim para habilitar as senhas de resposta de desafio (cuidado com os problemas com
-# alguns módulos PAM e threads)
+# Change to yes to enable challenge-response passwords (beware issues with
+# some PAM modules and threads)
 
-ChallengeResponseAuthentication  não
+ChallengeResponseAuthentication no
 
-# Opções Kerberos
+# Kerberos options
 # KerberosAuthentication no
 # KerberosOrLocalPasswd yes
 # KerberosTicketCleanup yes
 # KerberosGetAFSToken no
 
-# Opções GSSAPI
+# GSSAPI options
 # GSSAPIAuthentication no
 # GSSAPICleanupCredentials yes
 # GSSAPIStrictAcceptorCheck yes
 # GSSAPIKeyExchange no
 
-# Defina como 'sim' para habilitar a autenticação PAM, processamento de conta,
-# e processamento da sessão. Se estiver habilitado, a autenticação PAM irá
-# seja permitido por meio de ChallengeResponseAuthentication e
-# PasswordAuthentication. Dependendo da configuração do seu PAM,
-# A autenticação PAM via ChallengeResponseAuthentication pode ser ignorada
-# a configuração de "PermitRootLogin sem senha".
-# Se você apenas deseja que a conta PAM e as verificações de sessão sejam executadas sem
-# Autenticação PAM, em seguida, habilite-a, mas defina PasswordAuthentication
-# e ChallengeResponseAuthentication como 'não'.
+# Set this to 'yes' to enable PAM authentication, account processing,
+# and session processing. If this is enabled, PAM authentication will
+# be allowed through the ChallengeResponseAuthentication and
+# PasswordAuthentication.  Depending on your PAM configuration,
+# PAM authentication via ChallengeResponseAuthentication may bypass
+# the setting of "PermitRootLogin without-password".
+# If you just want the PAM account and session checks to run without
+# PAM authentication, then enable this but set PasswordAuthentication
+# and ChallengeResponseAuthentication to 'no'.
 
-UsePAM  sim
+UsePAM yes
 
 # AllowAgentForwarding yes
 # AllowTcpForwarding yes
 # GatewayPorts no
 
-X11Forwarding  sim
+X11Forwarding yes
 
 # X11DisplayOffset 10
 # X11UseLocalhost yes
-# PermitTTY sim
+# PermitTTY yes
 
-PrintMotd  não
+PrintMotd no
 
 # PrintLastLog yes
-# TCPKeepAlive sim
+# TCPKeepAlive yes
 # PermitUserEnvironment no
-# Compressão atrasada
+# Compression delayed
 # ClientAliveInterval 0
 # ClientAliveCountMax 3
 # UseDNS no
 # PidFile /var/run/sshd.pid
-# MaxStartups 10: 30: 100
+# MaxStartups 10:30:100
 # PermitTunnel no
-# ChrootDirectory nenhum
+# ChrootDirectory none
 # VersionAddendum none
 
-# nenhum caminho de banner padrão
-# Banner nenhum
+# no default banner path
+#Banner none
 
-# Permitir que o cliente passe variáveis ​​de ambiente local
-AcceptEnv  LANG  LC_ *
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
 
-# anula o padrão de nenhum subsistema
-Subsistema 	sftp 	/ usr / lib / openssh / sftp-server
+# override default of no subsystems
+Subsystem	sftp	/usr/lib/openssh/sftp-server
 
-# Exemplo de configuração de substituição por usuário
+# Example of overriding settings on a per-user basis
 # Match User anoncvs
-# 	X11Forwarding no
-# 	AllowTcpForwarding no
-# 	PermitTTY não
-# 	ForceCommand cvs server
+#	X11Forwarding no
+#	AllowTcpForwarding no
+#	PermitTTY no
+#	ForceCommand cvs server
