@@ -1,0 +1,11 @@
+mkdir /etc/skel/Documents; chmod 0700 /etc/skel/Documents
+su - l1m9 -c 'mkdir ~/Documents; chmod 0700 ~/Documents'
+
+smbpasswd -a l1m9
+
+mkdir -p /home/common/public
+chgrp nogroup /home/common/public
+chmod 0770 /home/common/public
+
+systemctl restart smbd
+systemctl restart nmbd
