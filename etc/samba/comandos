@@ -7,5 +7,7 @@ mkdir -p /home/common/public
 chgrp nogroup /home/common/public
 chmod 0770 /home/common/public
 
+testparm
+
 systemctl restart smbd
 systemctl restart nmbd
