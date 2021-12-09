@@ -1,14 +1,30 @@
 ;
 ; BIND data file for local loopback interface
 ;
+
+
 $TTL    604800
 @       IN      SOA     l1m9.lan. root.l1m9.lan. (
                               1         ; Serial
-                         604800         ; Refresh
-                          86400         ; Retry
-                        2419200         ; Expire
-                         604800 )       ; Negative Cache TTL
+                             8H         ; Refresh
+                             2H         ; Retry
+                             4W         ; Expire
+                             1D )       ; Negative Cache TTL
 ;
-@       IN      NS      l1m9.lan.
-@       IN      A       172.16.0.77
-@       IN      AAAA    ::1
+
+@                       IN      NS      l1m9.lan.
+
+@                       IN      A       172.16.0.77
+
+@                       IN      AAAA    ::1
+
+mail                    A       172.16.0.77
+
+l1m9.lan.               A       172.16.0.77
+server                  A       172.16.0.77
+
+virtual                 A       172.16.0.77
+
+router                  A       172.16.0.77
+gateway                 CNAME   172.16.0.77
+gw                      CNAME   172.16.0.77
