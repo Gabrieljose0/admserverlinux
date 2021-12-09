@@ -1,13 +1,19 @@
 ;
-; BIND reverse data file for local 172.16.0.XXX net
+; BIND zone file for 192.168.1.xxx
 ;
-$TTL    604800
-@       IN      SOA     ns.l1m9.lan. root.l1m9.lan. (
-                              1         ; Serial
-                             8H         ; Refresh
-                             2H         ; Retry
-                             4W         ; Expire
-                             1D )       ; Negative Cache TTL
+
+$TTL    3H
+@       IN      SOA     @               root.l1m9.lan. (
+                        2017061201      ; serial
+                        8H              ; refresh
+                        2H              ; retry
+                        4W              ; expire
+                        1D )            ; minimum
 ;
-@       IN      NS      ns.
-77      IN      PTR     ns.l1m9.lan.
+@               NS      ns.l1m9.lan.    ; Nameserver address
+
+77.0             PTR     server.l1m9.lan.
+77.0             PTR     ns.l1m9.lan.
+77.0             PTR     mail.l1m9.lan.
+77.0             PTR     virtual.l1m9.lan.
+1.0              PTR     router.l1m9.lan.
