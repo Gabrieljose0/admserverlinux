@@ -3,13 +3,13 @@ apt install bind9 bind9-doc dnsutils
 named-checkconf 
 (após configurar /etc/bind/named.conf.local)
 
-named-checkzone gabriel.lan /etc/bind/db.gabriel.lan
-(após configurar o /etc/bind/db.gabriel.lan)
+named-checkzone l1m9.lan /etc/bind/db.l1m9.lan
+(após configurar o /etc/bind/db.l1m9.lan)
 
 sudo named-checkzone 77.0.16.172.in-addr.arpa /etc/bind/db.77.0.16.172 
 (Após configurar /etc/bind/db.77.0.16.172)
 
-
-
+named-checkconf -z
+(Verificar também que o bind9 consegue ler todas as zonas)
 
 
