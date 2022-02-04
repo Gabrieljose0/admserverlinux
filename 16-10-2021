@@ -7,7 +7,6 @@ sudo apt install openssh-client -y &&
 sudo apt install openssh-server -y 
 
 
-https://github.com/huntercodecamp
 
 sudo nano -w / etc / ssh / ssh_config
 sudo nano -w / etc / ssh / sshd_config
@@ -16,5 +15,4 @@ serviço chamado start
 
 
 https://ninite.com/
-massa de vidraceiro
-l1professor @ l1professor
+
